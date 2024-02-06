@@ -30,7 +30,6 @@ You can either use Python + Mito first, or use Python first. If you are running 
 2. How long does it take to complete the workflow when you using Mito AND Python?
 3. How many times does your code error?
 4. How often and where do you get stuck in either case?
-TODO: add more? 
 
 ## Workflow Description
 
