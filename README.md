@@ -1,10 +1,10 @@
 # Mito Efficiency Test for Finance
 
-This repository contains data and instructions for Finance professionals to test how Mito changes their ability to write Python code. 
+The Mito Efficiency Test for Finance helps finance professionals test how Mito changes their ability to write Python code. By the end of the test, you will know exactly how much faster or slower you are writing Python code with Mito compared to writing Python code by hand. 
 
 ## Background 
 
-Python is the most popular and rapidly growing language for Finance professionals. However, transitioning from workflows in tools like Excel to Python can take years of training and work before Finance professionals become truly productive.
+Python is the most popular and rapidly growing language for Finance professionals. However, transitioning from tools like Excel to Python can take months or years of training.
 
 This repository contains a sample Finance workflow, that includes:
 - Reading in XLSX and CSV files
@@ -15,8 +15,10 @@ This repository contains a sample Finance workflow, that includes:
 
 ## Running a Mito Efficiency Test
 
+If you don't already have Python and Jupyter installed, follow [these installation instructions](https://docs.trymito.io/getting-started/installing-mito).
+
 To run a Mito Efficiency Test:
-1. Download the `data` folder from this Github repository
+1. Download the `data` folder from this GitHub repository
 2. See the **Workflow Description** in this README
 3. Complete the workflow with Python in a Jupyter notebook.
 4. Complete the workflow with Python AND Mito in a Jupyter notebook -- using Mito for the analysis.
@@ -24,20 +26,19 @@ To run a Mito Efficiency Test:
 You can either use Python + Mito first, or use Python first. If you are running this test with multiple users, switch off. 
 
 ### What to track while completing the workflow
-1. How long does it take to complete the workflow working with just Python?
-2. How long does it take to complete the workflow when you use Mito AND Python?
-3. How often and where do you get stuck in either case?
+1. How long does it take to complete the workflow when just using Python?
+2. How long does it take to complete the workflow when you using Mito AND Python?
+3. How many times does your code error?
+4. How often and where do you get stuck in either case?
 TODO: add more? 
-
-## Timeline 
 
 ## Workflow Description
 
-You're an analyst, doing performance analysis on your portfolio. You have a dataset called `data/Company List.xlsx`, which is an internal Excel document that tracks your full portfolio. Furthermore, you have a bunch of data in `data/stocks` that contains stock information for all the tickers in your portfolio.
+You're an analyst calculating the performance of a stock portfolio. You have a dataset called `data/Company List.xlsx`, which is an internal Excel document that tracks your full portfolio. Furthermore, you have a bunch of data in `data/stocks` that contains stock information for all the tickers in your portfolio.
 
 You're aiming to create two major artifacts:
-1. A bar chart showing the percentage of your portfolio of the companies that have the highest five highest percentages (TODO: rephrase)
-2. An exported Excel document that has the results of a pivot table, showing the average trading volume for each of these five stocks for every month
+1. A bar chart showing the percentage of your portfolio's values that is attributed to the five holdings
+2. An Excel workbook that shows the average trading volume for each of these five stocks for every month
 
 ### The Workflow Steps
 
@@ -46,15 +47,16 @@ You're aiming to create two major artifacts:
 2. Remove the `Total` row from the bottom of the `Company_List` dataframe
 
 #### B: Calculate portfolio percentage 
-1. Create a new column in your dataframe for `Portfolio Percentage` (TODO: what should this be called)
-2. Make each cell in this column equal to the percentage of this 
+1. Convert the `Value` column to a float so you can easily operate on it
+2. Create a new column in your dataframe called `Portfolio Weight`
+2. Set each cell in this column equal to the percentage of this company's value in the portfolio compared to the total portfolio value
 
 #### C: Filter down the companies 
-1. Filter down to only the five companies that have the highest portfolio percentages
+1. Filter down to only the five companies that have the highest portfolio weights
 
 #### D: Create a bar chart of portfolio percentage
 1. Create a new bar chart
-2. On the X axis, include these 5 company names. On the Y axis, show the current `Portfolio Percentage` of each company. 
+2. On the X axis, include these 5 company names. On the Y axis, show the current `Portfolio Weight` of each company. 
 3. **This graph is one final artifact, so save it as a PNG**
 
 #### E: Import relevant stock prices
@@ -65,15 +67,15 @@ You're aiming to create two major artifacts:
 #### F: Create a pivot table of stock volume
 1. Create a new pivot table, that splits the data based on:
     - Rows: the year and month
-    - Columns: the top 5 stocks
+    - Columns: the top 5 stock tickers
     - Values: the average volume over that month
 
 #### G: Export your pivot table to Excel 
-1. Export this pivot table to Excel, for future presentation
+1. **This pivot table is the other final artifact, so export it as an Excel file**
 
 # Hints
 
-This section contains hints that users can refer to incase they get stuck on any specific step. We provide these hints so that users. One useful met
+This section contains hints that users can refer incase they get stuck on any specific step.
 
 ### Python Hints
 
@@ -119,7 +121,7 @@ In general, if you need a hint on how to use Mito: use Mito like you use Excel.
 1. Use the Graph button to create a bar graph
 
 #### E: Import relevant stock prices
-1. Use Mito's `Import` button for XLSX importing
+1. Use Mito's `Import` button for csv importing
 2. Concat with the `Merge` > `Concat` button
 3. Change dtypes with the `dtype` button in the toolbar
 
