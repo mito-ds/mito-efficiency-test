@@ -74,7 +74,7 @@ You're aiming to create two major artifacts:
 
 # Hints
 
-This section contains hints that users can refer incase they get stuck on any specific step.
+This section contains hints that users can refer in case they get stuck on any specific step.
 
 ### Python Hints
 
